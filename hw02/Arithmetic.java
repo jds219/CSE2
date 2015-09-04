@@ -44,6 +44,8 @@ public class Arithmetic{
         double totalPurchase= (double)((int)((totalEnvelopes+totalGlasses+totalSocks+taxEnvelopes+taxGlasses+taxSocks)*100))/100;
         
         //prints out all values
-        System.out.println("Total Envelope cost: $"+totalEnvelopes+"\n"+totalGlasses+" "+totalSocks+" "+taxEnvelopes+" "+taxGlasses+" "+taxSocks+" "+totalPurchase);
+        System.out.println("Total Envelope cost: $"+totalEnvelopes+"\n"+"Total glasses cost: $" +totalGlasses+"\n"
+        +"Total socks cost: $"+totalSocks+"\n"+"Tax on envelopes: $"+taxEnvelopes+"\n"+"Tax on glasses: $"+taxGlasses+"\n"+"Tax on socks: $"+taxSocks+
+        "\n"+"Total cost of items and taxes: $"+totalPurchase);
     }
 }
