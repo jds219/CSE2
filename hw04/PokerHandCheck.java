@@ -4,13 +4,11 @@
 //Returns whether the hand is a pair, two pair, three of a kind, or a high card hand
 
 
-public class PokerHandCheck{
+public class PokerHandCheck{ //main class
     
-    public static void main(String[] args){
+    public static void main(String[] args){ // main method
         
-        //Just a check
-        
-        //First iteration of cards and suit
+        //Initializing all variables that will be used throughout program
         int generator = (int)(Math.random()*(52))+1;
         String suit1 =" ";
         String suit2 =" ";
@@ -23,6 +21,8 @@ public class PokerHandCheck{
         String card3 = " ";
         String card4 = " ";
         String card5 = " ";
+        
+        //First iteration of cards and suit
         
         //series of if statements to determine suit based off random number
         if(generator<14) //condition sets the range
@@ -94,7 +94,9 @@ public class PokerHandCheck{
                 
         }
         //end of first iteration of card value*********************************************************************************
- generator = (int)(Math.random()*(52))+1;
+ 
+        //start of 2nd iteration of suits and card value    
+ generator = (int)(Math.random()*(52))+1; //used each time to choose new card
  
  if(generator<14) //condition sets the range
         {
@@ -164,6 +166,8 @@ public class PokerHandCheck{
                 break;
                 
         } //end of second iteration*********************************************************************************
+        
+        //start of third iteration
 generator = (int)(Math.random()*(52))+1;
  
  if(generator<14) //condition sets the range
@@ -234,6 +238,8 @@ generator = (int)(Math.random()*(52))+1;
                 break;
                 
         }// end of third iteration*****************************************************************************************
+        
+        //start of fourth iteration
 generator = (int)(Math.random()*(52))+1 ;
  
  if(generator<14) //condition sets the range
@@ -303,7 +309,9 @@ generator = (int)(Math.random()*(52))+1 ;
                 System.out.println("Invalid entry");
                 break;
                 
-        }//end of fourth iteration****************************************************************************************8
+        }//end of fourth iteration****************************************************************************************
+        
+        //start of fifth iteration
  generator = (int)(Math.random()*(52))+1;
  
  if(generator<14) //condition sets the range
@@ -375,50 +383,55 @@ generator = (int)(Math.random()*(52))+1 ;
                 
         }//end of fifth iteration******************************************************************************************
  
-        System.out.println(card1 +" of "+ suit1 +"\n"+card2 +" of "+ suit2 +"\n"+card3 +" of "+ suit3 +"\n"+card4 +" of "+ suit4 +"\n"+card5 +" of "+ suit5);
- 
-        if(card1.equals(card2))
+    //prints out the five card's suits and values
+    System.out.println(card1 +" of "+ suit1 +"\n"+card2 +" of "+ suit2 +"\n"+card3 +" of "+ suit3 +"\n"+card4 +" of "+ suit4 +"\n"+card5 +" of "+ suit5);
+
+
+        //series of if statements used to calculate pair, two pair, three of a kind, or high card 
+        if(card1.equals(card2)) //first if statements checks for pair
         {
-            if(card1.equals(card3) || card1.equals(card4) || card1.equals(card5))
+            if(card1.equals(card3) || card1.equals(card4) || card1.equals(card5)) //second if statement checks for three of a kind
             {
                 System.out.println("You have three of a kind!");
             }
-            else if(card3.equals(card4) || card3.equals(card5) || card4.equals(card5))
+            else if(card3.equals(card4) || card3.equals(card5) || card4.equals(card5)) //third checks for two pair
             {
                 System.out.println("You have two pair!");
             }
-            else
+            else //defaults to pair if neither three of kind or two pair
             {
                 System.out.println("You have a pair!");
             }
         }
+        
+            //repeats checking each possible pair, three of a kind, or two pair hand
             
-        else if(card1.equals(card3))
+        else if(card1.equals(card3)) //pair check
         {
-            if(card1.equals(card4) || card1.equals(card5))
+            if(card1.equals(card4) || card1.equals(card5)) //three of kind check
             {
                 System.out.println("You have three of a kind!");
             }
-            else if (card2.equals(card4) || card2.equals(card5) || card4.equals(card5))
+            else if (card2.equals(card4) || card2.equals(card5) || card4.equals(card5)) //two pair check
             {
                 System.out.println("You have two pair!");
             }
-            else
+            else //default to pair
             {
-                System.out.println("You have a pair!");
+                System.out.println("You have a pair!"); 
             }
         }
-        else if(card1.equals(card4))
+        else if(card1.equals(card4)) //pair check
         {
-            if(card1.equals(card5))
+            if(card1.equals(card5)) //three of a kind check
             {
                 System.out.println("You have three of a kind!");
             }
-            else if (card2.equals(card3) || card2.equals(card5) || card3.equals(card5))
+            else if (card2.equals(card3) || card2.equals(card5) || card3.equals(card5)) // two pair check
             {
                 System.out.println("You have two pair!");
             }
-            else
+            else //default to pair
             {
                 System.out.println("You have a pair!");
             }
@@ -490,7 +503,7 @@ generator = (int)(Math.random()*(52))+1 ;
                 System.out.println("You have a pair!");
             }
         }
-        else if(card3.equals(card5))
+        else if(card3.equals(card5)) //last check on card3
         {
             if(card1.equals(card2) || card1.equals(card4) || card2.equals(card4))
             {
@@ -501,7 +514,7 @@ generator = (int)(Math.random()*(52))+1 ;
                 System.out.println("You have a pair!");
             }
         }
-        else if(card4.equals(card5))
+        else if(card4.equals(card5)) //last check
         {
             if(card1.equals(card2) || card1.equals(card4) || card2.equals(card4))
             {
@@ -517,5 +530,5 @@ generator = (int)(Math.random()*(52))+1 ;
             System.out.println("You have a high card!");
         }
         
-    }
-}
+    } //end of main method
+} //end of main class
